@@ -1,29 +1,3 @@
-# TCP SERVER
-# import socket 
-
-# server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# server.bind(("localhost", 9999))
-# server.listen()
-
-# while True:
-#     client, address = server.accept()
-#     print(f"Connected to {address}.")
-#     print(client.recv(1024).decode('utf-8'))
-#     client.send("Hello client!".encode('utf-8'))
-#     print(client.recv(1024).decode('utf-8'))
-#     client.send("Bye client!".encode('utf-8'))
-#     client.close()
-
-# UDP SERVER
-# import socket
-
-# server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-# server.bind(("localhost", 9999))
-
-# message, address = server.recvfrom(1024)
-# print(message.decode('utf-8'))
-# server.sendto("Hello client!".encode("utf-8"), address)
-
 import socket
 from datetime import datetime
 import threading
@@ -34,8 +8,6 @@ HOST = "localhost"
 TCP_PORT = 9090
 UDP_PORT = 9091
 BUFSIZE = 65536
-
-mutex = threading.Lock()
 
 class Server():
     def __init__(self):
